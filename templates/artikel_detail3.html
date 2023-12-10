@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Klinik Sehat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  </head>
+  <!-- CSS -->
+  <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet" />
+
+  <!-- CSS Icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
+  <body>
+    <!-- Navbar -->
+    <header class="navbar navbar-expand-lg navbar-light fixed-top bg-light shadow-lg">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="#">Klinik Sehat</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse text-righ" id="navbarText">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#ths">Tips Hidup Sehat</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#kontak">Kontak Kami</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- End Navbar -->
+    <!-- Artikel -->
+    <div id="ths" class="container mt-5 pt-5 my-5" style="min-height:100vh">
+      <div class="mb-5">
+        <div class="row">
+          <div class="col">
+            <p class="mb-5">
+              <a class="text-decoration-none text-dark" href="{{url_for('artikel')}}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"></path>
+                </svg>Kembali ke Halaman Artikel
+              </a>
+            </p>
+            <h1 class="text-center fw-bold judulkategori">Kenali Penyebab Sakit Perut Sebelah Kiri &amp; Cara Mengatasinya</h1>
+            <hr class="mx-auto" style="width:10%; background-color: #1E88E5;" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <img class="mx-auto d-block" src="../static/sakit_perut.jpg" />
+            <div class="mt-3">
+              <p style="white-space: pre-line;text-align:justify;">
+                Sakit perut sebelah kiri bisa disebabkan oleh berbagai faktor. Mengingat perut sebelah kiri merupakan lokasi berkumpulnya organ penting, seperti ginjal kiri, pankreas, usus besar (kolon), limpa, sebagian kecil lambung, kelenjar adrenal dan bagian kiri hati. Pada perempuan, area ini juga merupakan lokasi bagi ovarium sebelah kiri.
+
+                Ketika satu atau beberapa organ tersebut mengalami gangguan kesehatan, maka hal ini dapat memicu rasa nyeri pada perut sebelah kiri. Namun, sakit perut sebelah kiri umumnya dapat sembuh dengan sendirinya dalam waktu 1-2 hari. Meski begitu, kondisi ini tetap perlu diwaspadai karena bisa jadi merupakan tanda penyakit berbahaya.
+
+                Mari kenali lebih jauh apa penyebab sakit perut sebelah kiri melalui ulasan berikut ini.
+
+                <strong>Penyebab Sakit Perut Sebelah Kiri</strong>
+                Nyeri perut sebelah kiri dapat disebabkan oleh berbagai hal, mulai dari divertikulitis, radang usus besar, hingga hernia. Meski begitu, bukan tak mungkin kondisi ini disebabkan oleh beberapa kasus lain yang memerlukan pemeriksaan lebih lanjut oleh dokter.
+
+                Berikut adalah masing-masing penjelasan tentang beberapa gangguan kesehatan yang dapat memicu perut sebelah kanan terasa sakit.
+
+                <strong>1. Divertikulitis</strong>
+                Sebagian besar kasus sakit perut sebelah kiri bawah disebabkan oleh divertikulitis, yaitu peradangan pada divertikula (kantong-kantong kecil yang terbentuk di usus besar). Beberapa gejala yang ditimbulkan oleh divertikulitis antara lain nyeri perut, demam, BAB berdarah, mual dan muntah. Kondisi ini dapat disembuhkan tanpa perawatan medis, yaitu dengan beristirahat dan memperbaiki pola makan.
+
+                <strong>2. Gastritis</strong>
+                Penyebab sakit perut sebelah kiri berikutnya adalah gastritis. Kondisi ini terjadi akibat adanya peradangan, iritasi, atau pengikisan pada lapisan lambung sehingga timbul rasa nyeri pada area perut. Gastritis yang berkepanjangan biasanya disebabkan oleh infeksi bakteri H.pylori, yaitu bakteri yang menyerang lapisan lambung. Selain nyeri perut, gastritis juga dapat menyebabkan keluhan mual, muntah, dan perut terasa begah (penuh).
+
+                <strong>3. Pankreatitis (Radang Pankreas)</strong>
+                Pankreatitis adalah peradangan pada pankreas secara mendadak. Pankreas sendiri merupakan organdi sisi kiri perut yang berfungsi menghasilkan enzim-enzim untuk mencerna makanan. Peradangan pada pankreas biasanya menimbulkan keluhan sakit perut sebelah kiri atas hingga punggung. Keluhan tersebut akan semakin terasa ketika berbaring dan setelah makan atau minum. Gejala lain dari pankreatitis adalah demam, perut terasa nyeri saat disentuh, diare, mual, dan muntah.
+
+                <strong>4. Radang Usus Besar</strong>
+                Sakit perut sebelah kiri bawah pada pria maupun wanita juga dapat disebabkan oleh radang usus besar. Selain menyebabkan nyeri perut, peradangan pada usus besar juga dapat mengakibatkan diare, penurunan berat badan, kelelahan, hingga perubahan feses menjadi berlendir atau konsistensinya menjadi lebih lembek. Nyeri perut biasanya akan berkurang setelah penderitanya buang air besar (BAB).
+
+                <strong>5. Angina</strong>
+                Angina adalah nyeri dada yang disebabkan oleh kurangnya aliran darah ke otot jantung. Selain nyeri dada, kondisi ini juga dapat menimbulkan keluhan berupa nyeri perut sebelah kiri atas, leher dan rahang terasa tidak nyaman, sensasi dada seperti diremas, mual, keringat dingin, dan sesak napas. Keluhan angina yang dirasakan sebagai nyeri perut ini sering dialami oleh pasien wanita usia lanjut, pengidap diabetes mellitus, dan pengidap penyakit jantung koroner (kelainan jantung akibat penumpukan plak di arteri).
+
+                <strong>6. Penyakit Ginjal</strong>
+                Penyakit ginjal, seperti batu ginjal sering kali menimbulkan rasa sakit perut sebelah kiri dan kanan. Rasa nyeri tersebut akan terasa ketika batu ginjal mulai bergerak ke dalam ureter (saluran penghubung ginjal dan kandung kemih).
+
+                Gejala lain dari batu ginjal adalah perubahan warna urine, peningkatan frekuensi buang air kecil, dan rasa nyeri ketika sedang buang air kecil. Kondisi ini dapat dipengaruhi oleh faktor genetik, kurang mengonsumsi cairan atau mengonsumsi mineral berlebihan.
+
+                <strong>7. Kista Ovarium</strong>
+                Sakit perut sebelah kiri bawah pada wanita dapat disebabkan oleh kista ovarium sebelah kiri, yaitu terbentuknya kantong berisi cairan di dalam ovarium. Kondisi ini biasanya tidak menimbulkan gejala dan dapat hilang dengan sendirinya.
+
+                Meski begitu, kista ovarium yang berukuran besar dapat menimbulkan rasa tidak nyaman dan tekanan pada kandung kemih sehingga membuat penderitanya sering buang air kecil.
+
+                <strong>8. Hernia</strong>
+                Hernia adalah kondisi ketika usus atau jaringan lunak lainnya menembus dinding otot perut yang lemah. Bila terjadi pada sisi kiri, hal tersebut dapat menyebabkan sakit perut sebelah kiri, terutama saat penderitanya membungkuk, batuk, tertawa, atau mengangkat beban berat. Hernia membutuhkan perawatan lebih lanjut apabila benjolan tidak kunjung hilang, terjadi perubahan posisi pada hernia, nyeri semakin bertambah, dan menimbulkan gejala seperti sembelit, muntah, dan kesulitan buang air besar.
+
+                <strong>9. GERD (Refluks Lambung)</strong>
+                GERD juga bisa menjadi alasan kenapa sakit perut sebelah kiri bisa terjadi. GERD adalah salah satu gangguan pencernaan yang disebabkan oleh kenaikan asam lambung. Kondisi ini dapat dipicu oleh beberapa faktor, seperti pola makan tidak teratur, obesitas, atau mengonsumsi makanan yang memicu asam lambung naik, misalnya makanan pedas.
+
+                <strong>Cara Mengatasi Sakit Perut Sebelah Kiri</strong>
+                Sakit perut sebelah kiri yang tidak serius biasanya akan hilang dengan sendirinya meski tanpa pengobatan khusus. Anda dapat melakukan beberapa upaya berikut ini untuk meringankan gejala nyeri perut
+              </p>
+              <ul>
+                <li>Mengompres perut dengan handuk hangat.</li>
+                <li>Mengunyah makanan secara perlahan.</li>
+                <li>Menghindari minuman bersoda, kafein, dan alkohol.</li>
+                <li>Mengonsumsi makanan dengan porsi sedikit tapi sering.</li>
+                <li>Menghindari makanan pedas, berlemak, dan asam.</li>
+                <li>Memperbanyak konsumsi cairan.</li>
+              </ul>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer id="kontak" class="text-light bg-dark pt-5 pb-4">
+      <div class="container text-center text-md-left">
+        <div class="row text-center text-md-left">
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-light">Alamat</h5>
+            <p>
+              <i class="bi bi-house me-2"></i> Jl. Karang Pucung, Keputih, Kec. Purwokerto Selatan, Jawa Tengah
+            </p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-light">Contact</h5>
+            <p>
+              <a href="#" class="text-light text-decoration-none"><i class="bi bi-whatsapp"></i> Chat Now</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-light">Social Media</h5>
+            <p>
+              <a href="https://www.facebook.com/" class="text-light text-decoration-none"><i class="bi bi-facebook"></i> Facebook</a>
+            </p>
+            <p>
+              <a href="https://www.instagram.com/" class="text-light text-decoration-none"><i class="bi bi-instagram"></i> Instagram</a>
+            </p>
+            <p>
+              <a href="https://www.youtube.com/" class="text-light text-decoration-none"><i class="bi bi-youtube"></i> Youtube</a>
+            </p>
+          </div>
+        </div>
+        <hr class="mb-4" />
+        <div class="row align-items-center">
+          <div class="col-md-7 col-lg-8">
+            <p class="text-center text-md-left">Copyright © by Kelompok 1 Learning X</p>
+          </div>
+          <div class="col-md-5 col-lg-4">
+            <div class="text-center text-md-right">
+              <a href="#" class="text-light text-decoration-none back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

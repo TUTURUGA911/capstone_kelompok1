@@ -1,0 +1,104 @@
+.hero-home {
+    position: relative;
+    background-image: url('img1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-home1 {
+    position: relative;
+    background-image: url('img2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-home3 {
+    position: relative;
+    background-image: url('img1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.overlay {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.hero-home h1,
+.hero-home p {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-home h2,
+.hero-home button {
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+}
+
+.hero-home3 h1,
+.lead h2,
+.hero-home3 p,
+.hero-home3 button {
+    position: relative;
+    z-index: 1;
+}
+
+.navbar-custom {
+    background-color: #000000;
+}
+
+.hero-home1 h1 {
+    position: relative;
+    z-index: 1;
+}
+
+.bgn {
+    min-height: 100vh;
+}
+
+.is-sparta {
+    color: #0dcaf0; !important;
+}
+
+.button.is-sparta {
+    background-color: #0dcaf0;;
+    border-color: transparent;
+    color: #fff !important;
+}
+  
+.button.is-sparta.is-outlined {
+    background-color: transparent;
+    border-color: #0dcaf0;;
+    color: #0dcaf0 !important;
+}

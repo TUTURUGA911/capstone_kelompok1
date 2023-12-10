@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Klinik Sehat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  </head>
+  <!-- CSS -->
+  <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet" />
+
+  <!-- CSS Icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
+  <body>
+    <!-- Navbar -->
+    <header class="navbar navbar-expand-lg navbar-light fixed-top bg-light shadow-lg">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="#">Klinik Sehat</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse text-righ" id="navbarText">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('home')}}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#ths">Tips Hidup Sehat</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#kontak">Kontak Kami</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- End Navbar -->
+    <!-- Artikel -->
+    <div id="ths" class="container pt-5 mt-5 my-5 px-3" style="min-height:100vh">
+      <div class="kategoricaption mb-5">
+        <div class="row">
+          <div class="col">
+            <h1 class="text-center fw-bold judulkategori">Artikel</h1>
+            <hr class="mx-auto" style="width:10%; background-color: #c3e2f0;" />
+          </div>
+        </div>
+      </div>
+      <div id="artikelwrapper">
+        <div class="card shadow mb-4">
+          <div class="card-body">
+            <div class="card-group vgr-cards">
+              <div class="card kartu pb-3">
+                <div class="card-img-body">
+                  <img class="card-img mx-auto d-block" style="width: 50%;" src="../static/spa.jpg" alt="Card image cap" />
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Mengenal Macam-Macam Perawatan Wajah di Dokter Kulit</h4>
+                  <p class="card-text"></p>
+                  <p class="card-text">Sekarang telah tersedia macam-macam perawatan wajah di dokter kulit yang bisa dinikmati oleh setiap orang sesuai kondisi kulit wajahnya. Berbagai perawatan tersebut bertujuan untuk mengatasi masalah pada kulit wajah, seperti jerawat, kulit kusam, hip....</p>
+                  <p></p>
+                  <a href="{{ url_for('artikel_detail') }}" class="btn btn-primary mt-5">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card shadow mb-4">
+          <div class="card-body">
+            <div class="card-group vgr-cards">
+              <div class="card kartu pb-3">
+                <div class="card-img-body">
+                  <img class="card-img mx-auto d-block" style="width: 50%;" src="../static/jantung.jpg" alt="Card image cap" />
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">7 Pantangan Penderita Jantung Bengkak yang Harus Diketahui</h4>
+                  <p class="card-text"></p>
+                  <p class="card-text">Jantung bengkak adalah pembengkakan pada jantung yang membuat ukurannya menjadi lebih besar dari ukuran normal. Kondisi ini bukanlah suatu penyakit, melainkan merupakan salah satu tanda penyerta dari suatu penyakit jantung.
+
+                    Jantung bengkak dapat d....</p>
+                  <p></p>
+                  <a href="{{ url_for('artikel_detail2') }}" class="btn btn-primary mt-5">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card shadow mb-4">
+          <div class="card-body">
+            <div class="card-group vgr-cards">
+              <div class="card kartu pb-3">
+                <div class="card-img-body">
+                  <img class="card-img mx-auto d-block" style="width: 50%;" src="../static/sakit_perut.jpg" alt="Card image cap" />
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Kenali Penyebab Sakit Perut Sebelah Kiri &amp; Cara Mengatasinya</h4>
+                  <p class="card-text"></p>
+                  <p class="card-text">Sakit perut sebelah kiri bisa disebabkan oleh berbagai faktor. Mengingat perut sebelah kiri merupakan lokasi berkumpulnya organ penting, seperti ginjal kiri, pankreas, usus besar (kolon), limpa, sebagian kecil lambung, kelenjar adrenal dan bagian kir....</p>
+                  <p></p>
+                  <a href="{{url_for('artikel_detail3')}}" class="btn btn-primary mt-5">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card shadow mb-4">
+          <div class="card-body">
+            <div class="card-group vgr-cards">
+              <div class="card kartu pb-3">
+                <div class="card-img-body">
+                  <img class="card-img mx-auto d-block" style="width: 50%;" src="../static/obat.jpg" alt="Card image cap" />
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Bahaya Narkoba bagi Kesehatan yang Wajib Diketahui</h4>
+                  <p class="card-text"></p>
+                  <p class="card-text">Orang yang menggunakan dan kecanduan narkoba sering memiliki satu atau lebih masalah kesehatan. Bahaya narkoba bagi kesehatan mencakup penyakit paru-paru, penyakit jantung, stroke, kanker, hingga kondisi kesehatan mental.
+
+                    Melalui tes pencitraan, ....</p>
+                  <p></p>
+                  <a href="{{ url_for('artikel_detail4') }}" class="btn btn-primary mt-5">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card shadow mb-4">
+          <div class="card-body">
+            <div class="card-group vgr-cards">
+              <div class="card kartu pb-3">
+                <div class="card-img-body">
+                  <img class="card-img mx-auto d-block" style="width: 50%;" src="../static/sun.jpg" alt="Card image cap" />
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Cuaca Panas, Ini 6 Cara Mencegah Dehidrasi pada Tubuh</h4>
+                  <p class="card-text"></p>
+                  <p class="card-text">Dehidrasi menjadi satu kondisi yang rentan terjadi di tengah cuaca panas dan ekstrem saat ini. Mencegah dehidrasi sangat penting untuk kesehatan tubuh.
+
+                    Setiap harinya, kita kehilangan air melalui fungsi alami tubuh. Karenanya, penting untuk dapat ....</p>
+                  <p></p>
+                  <a href="{{ url_for('artikel_detail5') }}" class="btn btn-primary mt-5">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer id="kontak" class="text-light bg-dark pt-5 pb-4">
+      <div class="container text-center text-md-left">
+        <div class="row text-center text-md-left">
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-light">Alamat</h5>
+            <p>
+              <i class="bi bi-house me-2"></i> Jl. Karang Pucung, Keputih, Kec. Purwokerto Selatan, Jawa Tengah
+            </p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-light">Contact</h5>
+            <p>
+              <a href="#" class="text-light text-decoration-none"><i class="bi bi-whatsapp"></i> Chat Now</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-light">Social Media</h5>
+            <p>
+              <a href="https://www.facebook.com/" class="text-light text-decoration-none"><i class="bi bi-facebook"></i> Facebook</a>
+            </p>
+            <p>
+              <a href="https://www.instagram.com/" class="text-light text-decoration-none"><i class="bi bi-instagram"></i> Instagram</a>
+            </p>
+            <p>
+              <a href="https://www.youtube.com/" class="text-light text-decoration-none"><i class="bi bi-youtube"></i> Youtube</a>
+            </p>
+          </div>
+        </div>
+        <hr class="mb-4" />
+        <div class="row align-items-center">
+          <div class="col-md-7 col-lg-8">
+            <p class="text-center text-md-left">Copyright © by Kelompok 1 Learning X</p>
+          </div>
+          <div class="col-md-5 col-lg-4">
+            <div class="text-center text-md-right">
+              <a href="#" class="text-light text-decoration-none back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

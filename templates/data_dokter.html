@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data Dokter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  </head>
+  <!-- CSS -->
+  <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet" />
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-custom p-3 bg-body-tertiary fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="#">Klinik <span>Sehat</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold text-primary" id="offcanvasNavbarLabel">Klinik <span>Sehat</span></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ url_for('admin') }}">Dashboard</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Data</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">Data Pasien</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Data dokter</a>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{{url_for('rekam_medis')}}">Rekam Medis</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <!-- Main -->
+    <div class="pt-5">
+      <section class="hero-home bg-light d-flex align-items-center justify-content-center position-relative">
+        <div class="px-4 py-5 my-5 text-center">
+          <h2>Data Dokter</h2>
+
+          <!-- Button to trigger modal -->
+          <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#tambahDokterModal">Tambah Dokter</button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="tambahDokterModal" tabindex="-1" aria-labelledby="tambahDokterModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title text-dark" id="tambahDokterModalLabel">Input Data Dokter</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <!-- Doctor input form -->
+                  <form method="POST" action="{{ url_for('tambah_dokter') }}">
+                    <div class="form-group">
+                      <label for="nama" class="text-dark">Nama Dokter:</label>
+                      <input type="text" class="form-control" id="nama" name="nama" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="spesialis" class="text-dark">Spesialis:</label>
+                      <input type="text" class="form-control" id="spesialis" name="spesialis" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="id_dokter" class="text-dark">ID Dokter:</label>
+                      <input type="text" class="form-control" id="id_dokter" name="id_dokter" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="jadwal">Jadwal:</label>
+                      <select class="form-control" id="jadwal" name="jadwal" required>
+                        <option value="pagi">Pagi (08:00-11:30)</option>
+                        <option value="siang">Siang (12:00-18:00)</option>
+                        <option value="malam">Malam (19:00-22:00)</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="alamat" class="text-dark">Alamat:</label>
+                      <input type="text" class="form-control" id="alamat" name="alamat" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="jenis_kelamin" class="text-dark">Jenis Kelamin:</label>
+                      <select class="form-control" id="jenis_kelamin" name="jenis_kelamin" required>
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="nomor_telepon" class="text-dark">Nomor Telepon:</label>
+                      <input type="text" class="form-control" id="nomor_telepon" name="nomor_telepon" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="overlay"></div>
+      </section>
+    </div>
+    <div class="container mt-3">
+      <h3>List of Doctors</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Nama Dokter</th>
+            <th scope="col">Spesialis</th>
+            <th scope="col">ID Dokter</th>
+            <th scope="col">Jadwal</th>
+            <th scope="col">Alamat</th>
+            <th scope="col">Jenis Kelamin</th>
+            <th scope="col">Nomor Telepon</th>
+            <th scope="col">Edit/Hapus</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for doctor in doctors %}
+            <tr>
+              <td>{{ doctor.nama }}</td>
+              <td>{{ doctor.spesialis }}</td>
+              <td>{{ doctor.id_dokter }}</td>
+              <td>{{ format_schedule(doctor.jadwal) }}</td>
+              <td>{{ doctor.alamat }}</td>
+              <td>{{ doctor.jenis_kelamin }}</td>
+              <td>{{ doctor.nomor_telepon }}</td>
+              <td>
+                <a href="#" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal{{ doctor._id }}">Edit</a>
+                <a href="{{ url_for('delete_dokter', id = doctor['_id']) }}" class="btn btn-danger">Hapus</a>
+              </td>
+            </tr>
+            
+                    <!-- Edit Doctor Modal -->
+                    <div class="modal fade" id="editModal{{ doctor._id }}" tabindex="-1" aria-labelledby="editModalLabel{{ doctor._id }}" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="editModalLabel{{ doctor._id }}">Edit Dokter</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Edit doctor form -->
+                                    <form method="POST" action="{{ url_for('edit_dokter', id=doctor['_id']) }}">
+                                        <div class="form-group">
+                                            <label for="nama" class="text-dark">Nama Dokter:</label>
+                                            <input type="text" class="form-control" id="nama" name="nama" value="{{ doctor.nama }}" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="spesialis" class="text-dark">Spesialis:</label>
+                                            <input type="text" class="form-control" id="spesialis" name="spesialis" value="{{ doctor.spesialis }}" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="id_dokter" class="text-dark">ID Dokter:</label>
+                                            <input type="text" class="form-control" id="id_dokter" name="id_dokter" value="{{ doctor.id_dokter }}" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="jadwal">Jadwal:</label>
+                                            <select class="form-control" id="jadwal" name="jadwal" required>
+                                                <option value="pagi" {% if doctor.jadwal == 'pagi' %} selected {% endif %}>Pagi (08:00-11:30)</option>
+                                                <option value="siang" {% if doctor.jadwal == 'siang' %} selected {% endif %}>Siang (12:00-18:00)</option>
+                                                <option value="malam" {% if doctor.jadwal == 'malam' %} selected {% endif %}>Malam (19:00-22:00)</option>
+                                            </select>
+                                        </div>
+                                        <!-- Add additional fields for alamat, jenis kelamin, and nomor telepon -->
+                                        <div class="form-group">
+                                            <label for="alamat" class="text-dark">Alamat:</label>
+                                            <input type="text" class="form-control" id="alamat" name="alamat" value="{{ doctor.alamat }}" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="jenis_kelamin" class="text-dark">Jenis Kelamin:</label>
+                                            <select class="form-control" id="jenis_kelamin" name="jenis_kelamin" required>
+                                                <option value="laki-laki" {% if doctor.jenis_kelamin == 'laki-laki' %} selected {% endif %}>Laki-laki</option>
+                                                <option value="perempuan" {% if doctor.jenis_kelamin == 'perempuan' %} selected {% endif %}>Perempuan</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nomor_telepon" class="text-dark">Nomor Telepon:</label>
+                                            <input type="tel" class="form-control" id="nomor_telepon" name="nomor_telepon" value="{{ doctor.nomor_telepon }}" required />
+                                        </div>
+                                        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <!-- Footer -->
+    <footer class="copyright mt-0">
+      <div class="container py-2">
+        <p class="text-center my-3">Copyright © by Kelompok 1 Learning X</p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
