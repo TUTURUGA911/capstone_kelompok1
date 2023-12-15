@@ -28,7 +28,7 @@
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Data</a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="{{url_for('data_pasien')}}">Data Pasien</a>
+                    <a class="dropdown-item" href="{{ url_for('data_pasien') }}">Data Pasien</a>
                   </li>
                   <li>
                     <a class="dropdown-item" href="{{ url_for('tambah_dokter') }}">Data dokter</a>
@@ -56,19 +56,21 @@
       </div>
       <div class="overlay"></div>
     </section>
+    <!-- Data Pasien -->
     <div class="container mt-5">
       <h1>Data Pasien</h1>
       <div class="table-responsive">
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">No</th>
               <th scope="col">NIK</th>
               <th scope="col">Nama</th>
               <th scope="col">Nomor Telepon</th>
               <th scope="col">Alamat</th>
               <th scope="col">Dokter</th>
               <th scope="col">Nomor Antrian</th>
+              <th scope="col">Tanggal</th>
               <th scope="col">Rekam Medis</th>
             </tr>
           </thead>
@@ -88,6 +90,13 @@
                   {% endfor %}
                 </td>
                 <td>{{ patient.queue_number }}</td>
+                <td>
+                  {% if patient.date %}
+                    {{ patient.date }}
+                  {% else %}
+                    N/A
+                  {% endif %}
+                </td>
                 <td>
                   <form method="post" action="{{ url_for('delete_pasien', id = patient._id) }}">
                     <button type="submit" class="btn btn-danger">Panggil Pasien</button>

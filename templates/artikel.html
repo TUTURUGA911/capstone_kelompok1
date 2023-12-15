@@ -20,7 +20,7 @@
         <div class="collapse navbar-collapse text-righ" id="navbarText">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('home')}}">Home</a>
+              <a class="nav-link" href="{{ url_for('home') }}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#ths">Tips Hidup Sehat</a>
@@ -96,7 +96,7 @@
                   <p class="card-text"></p>
                   <p class="card-text">Sakit perut sebelah kiri bisa disebabkan oleh berbagai faktor. Mengingat perut sebelah kiri merupakan lokasi berkumpulnya organ penting, seperti ginjal kiri, pankreas, usus besar (kolon), limpa, sebagian kecil lambung, kelenjar adrenal dan bagian kir....</p>
                   <p></p>
-                  <a href="{{url_for('artikel_detail3')}}" class="btn btn-primary mt-5">Read More</a>
+                  <a href="{{ url_for('artikel_detail3') }}" class="btn btn-primary mt-5">Read More</a>
                 </div>
               </div>
             </div>
@@ -147,7 +147,7 @@
       </div>
     </div>
     <!-- Footer -->
-    <footer id="kontak" class="text-light bg-dark pt-5 pb-4">
+    <footer id="kontak" class="text-light bg-secondary pt-5 pb-4" style=".bg-secondary.bg-gradient">
       <div class="container text-center text-md-left">
         <div class="row text-center text-md-left">
           <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -178,7 +178,8 @@
         <hr class="mb-4" />
         <div class="row align-items-center">
           <div class="col-md-7 col-lg-8">
-            <p class="text-center text-md-left">Copyright © by Kelompok 1 Learning X</p>
+            <img src="../static/footer.png" style="width: 30%;" alt="" />
+            <p class="text-center text-md-left mt-3">Copyright © by Kelompok 1 Learning X</p>
           </div>
           <div class="col-md-5 col-lg-4">
             <div class="text-center text-md-right">

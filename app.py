@@ -54,6 +54,14 @@ def get_next_queue_number(dokter_id):
         return last_queue_number['queue_number'] + 1
     else:
         return 1
+    
+def get_formatted_date(date_str):
+    try:
+        # Assuming date_str is a string in the format '%Y-%m-%d %H:%M:%S'
+        date_object = datetime.strptime(date_str, '%Y-%m-%d %H:%M:%S')
+        return date_object.strftime('%d %B %Y %H:%M:%S')  # Format the date as needed
+    except ValueError:
+        return None
 
 
 @app.route('/')
@@ -304,32 +312,35 @@ def ambil_antrian():
         nomor_telepon = request.form['nomor_telepon']
         alamat = request.form['alamat']
         dokter_id = ObjectId(request.form['dokter'])
+        current_date = datetime.now()  # Get the current date and time
 
-        # Gunakan fungsi baru untuk mendapatkan nomor antrian
         queue_number = get_next_queue_number(dokter_id)
 
-        # Simpan data pasien baru dengan nomor antrian yang dihitung
         patient_data = {
             'nik': nik,
             'nama': nama,
             'nomor_telepon': nomor_telepon,
             'alamat': alamat,
             'dokter_id': dokter_id,
-            'queue_number': queue_number
+            'queue_number': queue_number,
+            'date': current_date.strftime('%Y-%m-%d'),  # Convert to string and store in the 'date' field
         }
 
         db.pasien.insert_one(patient_data)
 
-        # Kirim queue_number ke halaman utama
         return redirect(url_for('home', queue_number=queue_number))
 
-    # Kirim queue_number ke template
-    return render_template('ambil_antrian.html', doctors=doctors, queue_number=queue_number)
+    return render_template('ambil_antrian.html', doctors=doctors, queue_number=queue_number, current_date=datetime.now())
 
 @app.route('/data_pasien')
 def data_pasien():
     doctors = get_doctors_with_queue()
     patients = list(db.pasien.find())
+
+    for patient in patients:
+        # Assuming your date information is stored in the 'date' field
+        patient['formatted_date'] = get_formatted_date(patient.get('date', ''))
+
     return render_template('data_pasien.html', doctors=doctors, patients=patients)
 
 @app.route('/cek_dokter')

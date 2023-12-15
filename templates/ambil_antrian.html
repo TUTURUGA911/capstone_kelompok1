@@ -20,7 +20,7 @@
         <div class="collapse navbar-collapse text-righ" id="navbarText">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('home')}}">Home</a>
+              <a class="nav-link" href="{{ url_for('home') }}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#ths">Tips Hidup Sehat</a>
@@ -65,6 +65,10 @@
                   <div class="mb-3">
                     <label for="alamat" class="form-label">Alamat</label>
                     <input type="text" class="form-control" id="alamat" name="alamat" required />
+                  </div>
+                  <div class="mb-3">
+                    <label for="date" class="form-label">Tanggal</label>
+                    <input type="text" class="form-control" id="date" name="date" value="{{ current_date.strftime('%Y-%m-%d') }}" readonly />
                   </div>
                   <div class="mb-3">
                     <label for="dokter" class="form-label">Pilih Dokter</label>
